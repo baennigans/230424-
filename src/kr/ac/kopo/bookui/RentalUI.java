@@ -20,9 +20,8 @@ public class RentalUI extends BaseUI {
 	@Override
 	public void execute() throws Exception {
 		
-		String id = scanStr("아이디를 입력하세요 : ");
+		member2 = member.logstatic();
 		
-		MemberVO member = service2.selectById(id);
 		if (member == null) {
 			System.out.println("=======================================");
 			System.out.println("\t   아이디를 잘못 입력하였습니다.");
@@ -40,7 +39,7 @@ public class RentalUI extends BaseUI {
 			System.out.println("   대여가능한 ["+ no +"]번 책이 없습니다.");
 		} else {
 			service.rentalBook(book);
-			service.rentalBook2(member, book);
+			service.rentalBook2(member2, book);
 			System.out.println("   "+ no +"번 책 ["+ book.getTitle() +"]을 대여하였습니다.");
 		}
 		System.out.println("=======================================");			

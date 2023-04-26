@@ -1,5 +1,6 @@
 package kr.ac.kopo.bookui;
 
+import kr.ac.kopo.LoginStatic;
 import kr.ac.kopo.service.BookService;
 import kr.ac.kopo.service.MemberService;
 import kr.ac.kopo.vo.BookVO;
@@ -18,10 +19,10 @@ public class ReturnUI extends BaseUI {
 	@Override
 	public void execute() throws Exception {
 
-		String id = scanStr("아이디를 입력하세요 : ");
+		member2 = member.logstatic();
+		
 		int no = scanInt("반납할 책번호를 입력하세요 : ");
 
-		MemberVO member = service2.selectById(id);
 		BookVO book = service.selectByNo(no);
 
 		System.out.println("=======================================");
@@ -29,7 +30,7 @@ public class ReturnUI extends BaseUI {
 			System.out.println("   [" + no + "]번 책은 존재하지 않습니다.");
 		} else {
 			service.returnBook(book);
-			service.returnBook2(member, book);
+			service.returnBook2(member2, book);
 			System.out.println("   " + no + "번 책 [" + book.getTitle() + "]을 반납하였습니다.");
 		}
 		System.out.println("=======================================");

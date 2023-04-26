@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import kr.ac.kopo.LoginStatic;
 import kr.ac.kopo.util.ConnectionFactory;
 import kr.ac.kopo.vo.MemberVO;
 import kr.ac.kopo.vo.RentalVO;
@@ -78,6 +79,8 @@ public class MemberDAO {
 				String phone = rs.getString("phone");
 				
 				member = new MemberVO(id, password, name, phone);
+				
+				new LoginStatic(member);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

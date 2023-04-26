@@ -2,12 +2,20 @@ package kr.ac.kopo.bookui;
 
 import java.util.Scanner;
 
+import kr.ac.kopo.LoginStatic;
+import kr.ac.kopo.vo.MemberVO;
+
 public abstract class BaseUI implements IBookUI {
 
 	private Scanner sc;
-
+	public LoginStatic member;
+	public MemberVO member2;
+	
+	
 	public BaseUI() {
 		sc = new Scanner(System.in);
+		member = new LoginStatic();
+		member2 = new MemberVO();
 	}
 
 	protected int scanInt(String msg) {

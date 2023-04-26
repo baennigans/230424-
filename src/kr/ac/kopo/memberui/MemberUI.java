@@ -39,7 +39,7 @@ public class MemberUI extends BaseUI {
 				break;
 			case 2:
 				System.out.println("내정보보기를 선택하였습니다.");
-				ui = new SearchMemberUI();
+				ui = new SearchMyInfoUI();
 				break;
 			case 3:
 				System.out.println("회원정보변경을 선택하였습니다.");

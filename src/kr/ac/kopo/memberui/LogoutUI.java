@@ -1,5 +1,7 @@
 package kr.ac.kopo.memberui;
 
+import kr.ac.kopo.LoginStatic;
+
 public class LogoutUI extends BaseUI {
 
 	@Override
@@ -11,6 +13,10 @@ public class LogoutUI extends BaseUI {
 		if(answer.equals("Y") || answer.equals("y")) {
 			System.out.println("\t   로그아웃 하였습니다.");	
 			System.out.println("=======================================\n\n");
+			
+			LoginStatic member = new LoginStatic();
+			member = null;
+			
 			FirstPageUI ui = new FirstPageUI();
 			ui.execute();
 		} else {

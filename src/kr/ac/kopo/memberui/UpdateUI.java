@@ -1,7 +1,6 @@
 package kr.ac.kopo.memberui;
 
 import kr.ac.kopo.service.MemberService;
-import kr.ac.kopo.vo.MemberVO;
 
 public class UpdateUI extends BaseUI {
 
@@ -17,12 +16,11 @@ public class UpdateUI extends BaseUI {
 	@Override
 	public void execute() throws Exception {
 		
-		String memberid = scanStr("아이디를 입력하세요 : ");
 		String memberpw = scanStr("비밀번호를 입력하세요 : ");
 		
-		MemberVO member = service.selectById(memberid);
+		member2 = member.logstatic();
 
-		if(member == null || !memberpw.equals(member.getPassword())) {
+		if(!memberpw.equals(member2.getPassword())) {
 			System.out.println("=======================================");
 			System.out.println("   아이디 또는 비밀번호를 잘못입력하였습니다.");
 			System.out.println("=======================================");
@@ -32,15 +30,15 @@ public class UpdateUI extends BaseUI {
 			switch(no) {
 			case 1 :
 				String newpw = scanStr("변경할 비밀번호를 입력하세요 : ");
-				member.setPassword(newpw);
+				member2.setPassword(newpw);
 				break;
 			case 2 :
 				String newname = scanStr("변경할 이름을 입력하세요 : ");
-				member.setName(newname);
+				member2.setName(newname);
 				break;
 			case 3 : 
 				String newphone = scanStr("변경할 연락처를 입력하세요 : ");
-				member.setPhone(newphone);
+				member2.setPhone(newphone);
 				break;
 			default :
 				System.out.println("=======================================");
@@ -49,7 +47,7 @@ public class UpdateUI extends BaseUI {
 				return;
 			}
 			
-			service.updateMember(member);
+			service.updateMember(member2);
 			System.out.println("=======================================");
 			System.out.println("\t   회원정보를 변경하였습니다.");
 			System.out.println("=======================================");

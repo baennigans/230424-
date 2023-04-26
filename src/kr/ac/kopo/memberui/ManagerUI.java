@@ -10,10 +10,9 @@ public class ManagerUI extends BaseUI {
 		System.out.println("***** 회원관리 시스템 *****");
 		System.out.println("1. 도서관 이용하기");
 		System.out.println("2. 전체 회원 조회");
-		System.out.println("3. 회원 검색");
-		System.out.println("4. 회원 정보변경");
-		System.out.println("5. 로그아웃");
-		System.out.println("6. 회원 탈퇴");
+		System.out.println("3. 회원 정보변경");
+		System.out.println("4. 로그아웃");
+		System.out.println("5. 회원 탈퇴");
 		System.out.println("0. 종료");
 		System.out.println("***********************");
 		int type = scanInt("원하는 항목을 선택하세요 : ");
@@ -43,18 +42,14 @@ public class ManagerUI extends BaseUI {
 				ui = new SearchAllUI();
 				break;
 			case 3:
-				System.out.println("회원검색을 선택하였습니다.");
-				ui = new SearchMemberUI();
-				break;
-			case 4:
 				System.out.println("회원정보변경을 선택하였습니다.");
 				ui = new UpdateUI();
 				break;
-			case 5:
+			case 4:
 				System.out.println("로그아웃을 선택하였습니다.");
 				ui = new LogoutUI();
 				break;
-			case 6:
+			case 5:
 				System.out.println("회원탈퇴를 선택하였습니다.");
 				ui = new RemoveUI();
 				break;

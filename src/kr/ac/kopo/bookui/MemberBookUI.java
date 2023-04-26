@@ -53,7 +53,7 @@ public class MemberBookUI extends BaseUI {
 				break;
 			case 5:
 				System.out.println("나의 대여 목록 검색을 선택하였습니다.");
-				ui = new RentalMemberUI();
+				ui = new RentalMyUI();
 				break;
 			case 0:
 				ui = new ExitUI();
